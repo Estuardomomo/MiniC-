@@ -1,2 +1,8 @@
-# MiniC-
-Crea un archivo de entrada para flex que contenga la definición lexicográfica del lenguaje C#
+﻿# Proyecto_C-
+ El objetivo principal del proyecto es crear un archivo de entrada para flex que contenga la definición lexicográfica del lenguaje C# (Hypertext Preprocessor). Para esto se implementó la librería JFlex y se desarolló una aplicación en el lenjuage Java la cual determina si el léxico de un archivo de entrada es válido. Por medio del concepto de automatas y expresiones regulares se reconocen los tokens provenientes del archivo fuente y se retorna un archivo con extención out, si todo es correcto, o extención err si al compilar se detectan errores.
+
+Instrucciones de uso:
+---
+1. El programa está conformado por tres botones y una pequeña consola, primero debe cargarse un archivo con extención .flex el cual contiene las expresiones regulares. Esto se realiza por medio del botón de carga de archivo el cual se caracteríza por el icono de un folder amarillo.
+2. El segundo paso es cargar un archivo con extención .sln por medio del botón etiquetado "C#". Este archivo será analizado por el programa usando como indicaciones las expresiones definidas en el archivo flex cargado anteriormente. Si todo es correcto se retornará un archivo .out con las expresiones en el formato c#. Sin embargo si el archivo no contiene el formato esperado se mostrará un listado de los errores en la consola y se generará un archivo con extención .err el cual contiene el mismo listado.
+3. Por último, se recomienda presionar el último botón para limpiar la consola antes de realizar más pruebas.
