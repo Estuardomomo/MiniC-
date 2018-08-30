@@ -36,7 +36,7 @@ public class miniPHP extends javax.swing.JFrame {
     public void cargarPHP(Component a) throws FileNotFoundException, IOException
     {
      JFileChooser dialog = new JFileChooser();
-     FileNameExtensionFilter filter = new FileNameExtensionFilter("archivos php", "php");
+     FileNameExtensionFilter filter = new FileNameExtensionFilter("archivos frag", "frag");
      dialog.setFileFilter(filter);
      if(dialog.showOpenDialog(a) == JFileChooser.APPROVE_OPTION)
      {       
@@ -46,27 +46,11 @@ public class miniPHP extends javax.swing.JFrame {
              BufferedReader objBufferedReader = new BufferedReader(objFileReader); 
              objYylex = new Yylex(objFileReader);
              ruta = selectedFile.getPath();
-             ruta = ruta.substring(0,ruta.length()-3); 
+             ruta = ruta.substring(0,ruta.length()-4); 
              objYylex.archivoSalida = new File(ruta + "out");
-             objYylex.archivoError = new File(ruta + "err");
              objYylex.Abrir();
-             objYylex.AbrirError();
              objYylex.nextToken();
              objYylex.Cerrar();
-             objYylex.CerrarError();
-             if(objYylex.bandera){
-                 selectedFile = new File(ruta+"err");
-             }else{
-                 selectedFile = new File(ruta+"out");
-                 FileReader reader = new FileReader(ruta + "err");
-                 BufferedReader buffer = new BufferedReader(reader);
-                 String line = buffer.readLine();
-                 while(line != null){
-                     tbConsole.append(line);
-                     line = buffer.readLine();
-                 }
-             }
-             selectedFile.delete();
              JOptionPane.showMessageDialog(null, "Se creó el archivo exitosamente.","Notificación",JOptionPane.OK_OPTION);
          }catch(NumberFormatException e){}
      }
