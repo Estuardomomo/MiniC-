@@ -1,2 +1,0 @@
-Yylex
-Yytoken

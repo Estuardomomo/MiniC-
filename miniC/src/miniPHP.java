@@ -64,7 +64,8 @@ public class miniPHP extends javax.swing.JFrame {
      if(dialog.showOpenDialog(a) == JFileChooser.APPROVE_OPTION)
      {
          File selectedFile = dialog.getSelectedFile();
-         jflex.Main.main(new String[] {selectedFile.getPath()});
+         jflex.Main.generate(selectedFile);
+         //jflex.Main.main(new String[] {selectedFile.getPath()});
      }
     }
     
@@ -105,7 +106,7 @@ public class miniPHP extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tbConsole);
 
         jLabel1.setFont(new java.awt.Font("Bookman Old Style", 3, 48)); // NOI18N
-        jLabel1.setText("miniPHP");
+        jLabel1.setText("miniC#");
 
         btnClean.setIcon(new javax.swing.ImageIcon(getClass().getResource("/console.png"))); // NOI18N
         btnClean.addActionListener(new java.awt.event.ActionListener() {
